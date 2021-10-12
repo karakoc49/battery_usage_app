@@ -1,4 +1,4 @@
-# battery_app
+# Battery Consumption App
 
 A new Flutter project.
 
