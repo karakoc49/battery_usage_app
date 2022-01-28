@@ -52,7 +52,7 @@ class _AnaEkranState extends State<AnaEkran> {
     getBatteryPercentage();
     getBatteryState();
 
-    timer = Timer.periodic(Duration(seconds: 5), (timer) {
+    timer = Timer.periodic(const Duration(seconds: 5), (timer) {
       getBatteryPercentage();
     });
   }
@@ -71,13 +71,13 @@ class _AnaEkranState extends State<AnaEkran> {
     });
   }
 
-  Widget Buildbattery(BatteryState state) {
+  Widget buildBattery(BatteryState state) {
     switch (state) {
       case BatteryState.full:
         return Container(
           width: 200,
           height: 200,
-          child: Icon(
+          child: const Icon(
             Icons.battery_full,
             size: 200,
             color: Colors.green,
@@ -87,7 +87,7 @@ class _AnaEkranState extends State<AnaEkran> {
         return Container(
           width: 200,
           height: 200,
-          child: Icon(
+          child: const Icon(
             Icons.battery_charging_full,
             size: 200,
             color: Colors.blue,
@@ -98,7 +98,7 @@ class _AnaEkranState extends State<AnaEkran> {
         return Container(
           width: 200,
           height: 200,
-          child: Icon(
+          child: const Icon(
             Icons.battery_alert,
             size: 200,
             color: Colors.deepOrangeAccent,
@@ -114,10 +114,10 @@ class _AnaEkranState extends State<AnaEkran> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Buildbattery(batteryState),
+            buildBattery(batteryState),
             Text(
               "$percentage%",
-              style: TextStyle(fontSize: 15),
+              style: const TextStyle(fontSize: 15),
             ),
           ],
         ),
